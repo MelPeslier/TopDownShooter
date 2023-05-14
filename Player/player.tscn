@@ -1,9 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c16v3dv3n3bqq"]
+[gd_scene load_steps=2 format=3 uid="uid://dmre0voo6becu"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_7dtdf"]
+[ext_resource type="Script" path="res://Player/Player.gd" id="1_gqvq7"]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_7dtdf")
+script = ExtResource("1_gqvq7")
 
 [node name="Corps" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(8, -32, -8, -32, -24, -24, -32, -8, -32, 8, -24, 24, -8, 32, 8, 32, 24, 24, 32, 8, 32, -8, 24, -24)
