@@ -15,4 +15,4 @@ polygon = PackedVector2Array(-8, -32, -24, -24, -32, -8, -32, 8, -24, 24, -8, 32
 position = Vector2(0, -6)
 scale = Vector2(1, 0.75)
 color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(0, -34.6667, -24, 8, -8, 8, 0, -2.66667, 8, 8, 24, 8)
+polygon = PackedVector2Array(32, 8, 0, -24, 0, -2.66667, 8, 8, 0, 18.6667, 0, 40)
