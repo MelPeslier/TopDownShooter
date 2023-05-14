@@ -5,6 +5,9 @@ var max_speed :float = 500.0
 var rotation_speed :float = PI * 3.0
 var time_acceleration :float = 1.45
 
+# Utiliser dans une fonction lerp ; doit être compris entre 0 et 1
+var deceleration_time :float = 0.15
+
 # Mouvements ; Pour gérer le temps d'accélération
 var input_time :float = 0.0
 
@@ -60,7 +63,8 @@ func get_input(delta):
 		velocity = expoOut(input_time) * vector_direction.normalized() * max_speed
 	else:
 		input_time = 0.0
-		velocity = Vector2(lerp(velocity.x, 0.0, 0.15), lerp(velocity.y, 0.0, 0.15))
+		velocity = Vector2(lerp(velocity.x, 0.0, deceleration_time),
+		lerp(velocity.y, 0.0, deceleration_time))
 
 
 func _physics_process(delta):
