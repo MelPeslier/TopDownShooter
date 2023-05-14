@@ -63,8 +63,10 @@ func get_input(delta):
 		velocity = expoOut(input_time) * vector_direction.normalized() * max_speed
 	else:
 		input_time = 0.0
-		velocity = Vector2(lerp(velocity.x, 0.0, deceleration_time),
-		lerp(velocity.y, 0.0, deceleration_time))
+		velocity = Vector2(
+			lerp(velocity.x, 0.0, deceleration_time),
+			lerp(velocity.y, 0.0, deceleration_time)
+		)
 
 
 func _physics_process(delta):
