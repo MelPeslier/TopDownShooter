@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dmre0voo6becu"]
+[gd_scene load_steps=3 format=3 uid="uid://dmre0voo6becu"]
 
 [ext_resource type="Script" path="res://Player/Player.gd" id="1_gqvq7"]
+[ext_resource type="PackedScene" uid="uid://cvd0roy7yjwkb" path="res://StatesMachines/state_manager.tscn" id="2_51p4v"]
 
-[node name="Player" type="CharacterBody2D"]
+[node name="player" type="CharacterBody2D"]
 script = ExtResource("1_gqvq7")
 
 [node name="Corps" type="Polygon2D" parent="."]
@@ -11,8 +12,10 @@ polygon = PackedVector2Array(8, -32, -8, -32, -24, -24, -32, -8, -32, 8, -24, 24
 [node name="CollisionCorps" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-8, -32, -24, -24, -32, -8, -32, 8, -24, 24, -8, 32, 8, 32, 24, 24, 32, 8, 32, -8, 24, -24, 8, -32)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
+[node name="style" type="Polygon2D" parent="."]
 position = Vector2(0, -6)
 scale = Vector2(1, 0.75)
 color = Color(0, 0, 0, 1)
 polygon = PackedVector2Array(32, 8, 0, -24, 0, -2.66667, 8, 8, 0, 18.6667, 0, 40)
+
+[node name="state_manager" parent="." instance=ExtResource("2_51p4v")]

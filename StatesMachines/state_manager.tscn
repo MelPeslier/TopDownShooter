@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvd0roy7yjwkb"]
+
+[ext_resource type="Script" path="res://StatesMachines/state_manager.gd" id="1_r6w24"]
+[ext_resource type="Script" path="res://StatesMachines/idle.gd" id="2_i3yld"]
+[ext_resource type="Script" path="res://StatesMachines/walk.gd" id="3_vs6fp"]
+
+[node name="state_manager" type="Node"]
+script = ExtResource("1_r6w24")
+
+[node name="idle" type="Node" parent="."]
+script = ExtResource("2_i3yld")
+animation_name = "IDLE"
+
+[node name="walk" type="Node" parent="."]
+script = ExtResource("3_vs6fp")
+animation_name = "WALK"
