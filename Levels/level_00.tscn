@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://1lkmpkssrqtr"]
+
+[ext_resource type="PackedScene" uid="uid://dmre0voo6becu" path="res://Player/player.tscn" id="1_mu0kt"]
+[ext_resource type="Script" path="res://Camera/Camera.gd" id="2_8ie5y"]
+[ext_resource type="Script" path="res://Camera/CameraCenter.gd" id="2_g01hm"]
+
+[node name="level_00" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_mu0kt")]
+
+[node name="CameraCenter" type="Marker2D" parent="."]
+script = ExtResource("2_g01hm")
+
+[node name="Camera" type="Camera2D" parent="CameraCenter"]
+position_smoothing_enabled = true
+script = ExtResource("2_8ie5y")
