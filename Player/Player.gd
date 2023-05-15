@@ -32,7 +32,7 @@ func rotate_to_mouse(delta):
 	# On récupère la rotation complète vers le viseur
 	angle_to_target = lerp_angle(global_rotation, angle_to_target, 1.0)
 	
-	# On limite la rotation à celle autorisée cete frame
+	# On limite la rotation à celle autorisée cette frame
 	angle_to_target = clamp(
 		angle_to_target,
 		global_rotation - allowed_rotation,
