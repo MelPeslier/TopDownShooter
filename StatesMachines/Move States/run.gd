@@ -9,10 +9,8 @@ var run_to_walk_limit: float = 700 * 0.7
 
 func enter() -> void:
 	speed = run_speed
-	print("+++ENTER+++ run")
+	print("\nrun")
 
-func exit() -> void:
-	print("---EXIT--- run")
 
 func physics_process(delta: float) -> BaseState:
 	super(delta)

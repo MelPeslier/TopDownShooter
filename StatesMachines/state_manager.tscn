@@ -16,6 +16,7 @@ starting_state = NodePath("idle")
 [node name="idle" type="Node" parent="."]
 script = ExtResource("2_vfobb")
 walk_node = NodePath("../walk")
+crouch_node = NodePath("../crouch")
 animation_name = "IDLE"
 
 [node name="walk" type="Node" parent="."]
@@ -33,6 +34,8 @@ script = ExtResource("5_36iq5")
 
 [node name="crouch" type="Node" parent="."]
 script = ExtResource("6_ik3x1")
+idle_node = NodePath("../idle")
+crouch_walk_node = NodePath("../crouch_walk")
 
 [node name="crouch_walk" type="Node" parent="."]
 script = ExtResource("7_s6nfe")

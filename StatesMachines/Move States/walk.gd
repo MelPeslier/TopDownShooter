@@ -12,10 +12,7 @@ var walk_speed: float = 450.0
 
 func enter() -> void:
 	speed = walk_speed
-	print("+++ENTER+++ walk")
-
-func exit() -> void:
-	print("---EXIT--- walk")
+	print("\nwalk")
 
 func physics_process(delta: float) -> BaseState:
 	super(delta)
