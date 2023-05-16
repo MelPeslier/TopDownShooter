@@ -9,9 +9,9 @@ extends BaseState
 @onready var crouch_state: BaseState = get_node(crouch_node)
 
 func enter() -> void:
-	print("\nidle")
+	pass
 
-func input(_event) -> BaseState:
+func physics_process(_delta: float) -> BaseState:
 	if is_moving():
 		return walk_state
 	

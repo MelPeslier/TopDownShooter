@@ -7,7 +7,7 @@ extends BaseState
 @onready var crouch_walk_state: BaseState = get_node(crouch_walk_node)
 
 func enter() -> void:
-	print("\ncrouch")
+	pass
 
 func input(_event: InputEvent) -> BaseState:
 	if Input.is_action_just_released("crouch"):
