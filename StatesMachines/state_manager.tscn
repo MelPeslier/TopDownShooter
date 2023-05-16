@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvd0roy7yjwkb"]
+[gd_scene load_steps=4 format=3 uid="uid://bdalf427vhdef"]
 
 [ext_resource type="Script" path="res://StatesMachines/state_manager.gd" id="1_r6w24"]
-[ext_resource type="Script" path="res://StatesMachines/idle.gd" id="2_i3yld"]
-[ext_resource type="Script" path="res://StatesMachines/walk.gd" id="3_vs6fp"]
+[ext_resource type="Script" path="res://StatesMachines/Move States/idle.gd" id="2_omxx7"]
+[ext_resource type="Script" path="res://StatesMachines/Move States/walk.gd" id="3_qc3tb"]
 
 [node name="state_manager" type="Node"]
 script = ExtResource("1_r6w24")
 starting_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="."]
-script = ExtResource("2_i3yld")
+script = ExtResource("2_omxx7")
 walk_node = NodePath("../walk")
 animation_name = "IDLE"
 
 [node name="walk" type="Node" parent="."]
-script = ExtResource("3_vs6fp")
+script = ExtResource("3_qc3tb")
 idle_node = NodePath("../idle")
+max_speed = null
+time_acceleration = null
+deceleration_time = null
 animation_name = "WALK"

@@ -6,9 +6,6 @@ extends CharacterBody2D
 # Variable pour les animations à ajouter
 #@onready var animations = $animations
 
-# Pour gérer l'accélération
-var input_time: float = 0.0
-
 func rotate_to_mouse(delta: float) -> void:
 	var rotation_speed: float = PI * 3.0
 	# Rotation douce entre le joueur et le viseur (la souris)

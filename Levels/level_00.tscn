@@ -1,15 +1,88 @@
-[gd_scene load_steps=4 format=3 uid="uid://1lkmpkssrqtr"]
+[gd_scene load_steps=5 format=3 uid="uid://1lkmpkssrqtr"]
 
 [ext_resource type="PackedScene" uid="uid://dmre0voo6becu" path="res://Player/player.tscn" id="1_mu0kt"]
 [ext_resource type="Script" path="res://Camera/Camera.gd" id="2_8ie5y"]
 [ext_resource type="Script" path="res://Camera/CameraCenter.gd" id="2_g01hm"]
+[ext_resource type="Texture2D" uid="uid://da2tbw48p7erj" path="res://icon.svg" id="4_fdyfu"]
 
 [node name="level_00" type="Node2D"]
 
+[node name="World" type="Node2D" parent="."]
+
+[node name="Ground" type="Polygon2D" parent="World"]
+color = Color(0.839216, 0.839216, 0.839216, 1)
+polygon = PackedVector2Array(-2000, -1000, -2000, 1000, 2000, 1000, 2000, -1000)
+
+[node name="Temporaire" type="Node2D" parent="World"]
+
+[node name="Icon" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(344, -184)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon2" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-664, -360)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon3" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-632, 648)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon4" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(1072, 632)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon5" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(2024, -1040)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon6" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(2024, 1016)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon7" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-1976, 968)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon8" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-2016, -1024)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon9" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-936, 160)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon10" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(1000, 128)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon11" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(544, -592)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon12" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(968, -448)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon13" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(312, 280)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon14" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-1560, -512)
+texture = ExtResource("4_fdyfu")
+
+[node name="Icon15" type="Sprite2D" parent="World/Temporaire"]
+position = Vector2(-1536, 72)
+scale = Vector2(0.25, 0.375)
+texture = ExtResource("4_fdyfu")
+
 [node name="Player" parent="." instance=ExtResource("1_mu0kt")]
+metadata/_edit_lock_ = true
 
 [node name="CameraCenter" type="Marker2D" parent="."]
 script = ExtResource("2_g01hm")
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
 
 [node name="Camera" type="Camera2D" parent="CameraCenter"]
 position_smoothing_enabled = true
