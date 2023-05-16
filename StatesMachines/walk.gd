@@ -1,6 +1,11 @@
 # walk state
 extends BaseState
 
+# Récupération des états
+@export_node_path("Node") var idle_node
+
+@onready var idle_state: BaseState = get_node(idle_node)
+
 @export var max_speed: float = 500.0
 @export var time_acceleration: float = 1.45
 @export var deceleration_time: float = 0.15
@@ -46,7 +51,7 @@ func enter() -> void:
 	#super()
 	print("walk state")
 
-func physics_process(delta: float) -> int:
+func physics_process(delta: float) -> BaseState:
 	super(delta)
 	
 	get_input(delta)
@@ -54,6 +59,6 @@ func physics_process(delta: float) -> int:
 	player.move_and_slide()
 
 	if player.velocity.length() == 0.0:
-		return State.IDLE
+		return idle_state
 	
-	return State.NULL
+	return null

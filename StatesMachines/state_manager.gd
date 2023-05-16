@@ -1,33 +1,35 @@
 extends Node
 
-@onready var states = {
-	BaseState.State.IDLE: $idle,
-	BaseState.State.WALK: $walk,
-}
+@export_node_path("Node") var starting_state
 
 var current_state: BaseState
 
-func change_state(new_state: int) -> void:
+func change_state(new_state: BaseState) -> void:
 	if current_state:
 		current_state.exit()
 	
-	current_state = states[new_state]
+	current_state = new_state
 	current_state.enter()
 
 func init(player: Player) -> void:
 	for child in get_children():
 		child.player = player
 	
-	change_state(BaseState.State.IDLE)
+	change_state(get_node(starting_state))
 
 # Fonction personnel, run sur le '_physics_process' du 'Player' qui l'appel
 # Pas la '_physics_process' de ce noeud
 func physics_process(delta: float) -> void:
 	var new_state = current_state.physics_process(delta)
-	if new_state != BaseState.State.NULL:
+	if new_state:
 		change_state(new_state)
 
 func input(event: InputEvent) -> void:
 	var new_state = current_state.input(event)
-	if new_state != BaseState.State.NULL:
+	if new_state:
+		change_state(new_state)
+
+func process(delta: float) -> void:
+	var new_state = current_state.process(delta)
+	if new_state:
 		change_state(new_state)

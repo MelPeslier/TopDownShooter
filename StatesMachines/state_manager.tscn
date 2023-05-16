@@ -6,11 +6,14 @@
 
 [node name="state_manager" type="Node"]
 script = ExtResource("1_r6w24")
+starting_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="."]
 script = ExtResource("2_i3yld")
+walk_node = NodePath("../walk")
 animation_name = "IDLE"
 
 [node name="walk" type="Node" parent="."]
 script = ExtResource("3_vs6fp")
+idle_node = NodePath("../idle")
 animation_name = "WALK"
