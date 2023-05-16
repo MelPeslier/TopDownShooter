@@ -5,6 +5,9 @@ extends Node
 
 var player: Player
 
+func is_moving() -> bool:
+	return Input.is_action_pressed("up") || Input.is_action_pressed("down") || Input.is_action_pressed("left") || Input.is_action_pressed("right")
+
 func enter() -> void:
 # Pour gérer l'animation ; à ajouter
 	#player.animations.play(animation_name)

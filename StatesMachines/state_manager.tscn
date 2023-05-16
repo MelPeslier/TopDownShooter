@@ -1,22 +1,41 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdalf427vhdef"]
+[gd_scene load_steps=9 format=3 uid="uid://c6g5qph6rillv"]
 
 [ext_resource type="Script" path="res://StatesMachines/state_manager.gd" id="1_r6w24"]
-[ext_resource type="Script" path="res://StatesMachines/Move States/idle.gd" id="2_omxx7"]
+[ext_resource type="Script" path="res://StatesMachines/idle.gd" id="2_vfobb"]
 [ext_resource type="Script" path="res://StatesMachines/Move States/walk.gd" id="3_qc3tb"]
+[ext_resource type="Script" path="res://StatesMachines/Move States/run.gd" id="4_kweqw"]
+[ext_resource type="Script" path="res://StatesMachines/Move States/slide.gd" id="5_36iq5"]
+[ext_resource type="Script" path="res://StatesMachines/crouch.gd" id="6_ik3x1"]
+[ext_resource type="Script" path="res://StatesMachines/Move States/crouch_walk.gd" id="7_s6nfe"]
+[ext_resource type="Script" path="res://StatesMachines/knockback.gd" id="8_68jea"]
 
 [node name="state_manager" type="Node"]
 script = ExtResource("1_r6w24")
 starting_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="."]
-script = ExtResource("2_omxx7")
+script = ExtResource("2_vfobb")
 walk_node = NodePath("../walk")
 animation_name = "IDLE"
 
 [node name="walk" type="Node" parent="."]
 script = ExtResource("3_qc3tb")
 idle_node = NodePath("../idle")
-max_speed = null
-time_acceleration = null
-deceleration_time = null
+run_node = NodePath("../run")
 animation_name = "WALK"
+
+[node name="run" type="Node" parent="."]
+script = ExtResource("4_kweqw")
+walk_node = NodePath("../walk")
+
+[node name="slide" type="Node" parent="."]
+script = ExtResource("5_36iq5")
+
+[node name="crouch" type="Node" parent="."]
+script = ExtResource("6_ik3x1")
+
+[node name="crouch_walk" type="Node" parent="."]
+script = ExtResource("7_s6nfe")
+
+[node name="knockback" type="Node" parent="."]
+script = ExtResource("8_68jea")

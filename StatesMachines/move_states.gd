@@ -1,7 +1,7 @@
 class_name MoveStates
 extends BaseState
 
-var max_speed: float = 500.0
+var speed: float = 500.0
 var time_acceleration: float = 1.45
 var deceleration_time: float = 0.15
 var stop_smooth: float = 0.99
@@ -38,7 +38,7 @@ func physics_process(delta: float) -> BaseState:
 	
 	if vector_direction.x != 0.0 || vector_direction.y != 0.0:
 		input_time += delta * time_acceleration
-		player.velocity = expoOut(input_time) * vector_direction.normalized() * max_speed
+		player.velocity = expoOut(input_time) * vector_direction.normalized() * speed
 	else:
 		input_time = 0.0
 		player.velocity = Vector2(

@@ -12,11 +12,8 @@ func enter() -> void:
 func exit() -> void:
 	print("---EXIT--- idle")
 
-func get_move_input() -> bool:
-	return Input.is_action_pressed("up") || Input.is_action_pressed("down") || Input.is_action_pressed("left") || Input.is_action_pressed("right")
-
 func input(_event) -> BaseState:
-	if get_move_input():
+	if is_moving():
 		return walk_state
 	
 	return null
